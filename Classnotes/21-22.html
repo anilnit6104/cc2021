@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 4</title>
+  
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <div id="wrapper">
+    <div id="container">
+
+        <section class="open-book">
+            <header>
+                <h1><a href="19-20.html" class="nounderline" >Previous</a></h1>
+				<h1><a href="23-24.html" class="nounderline" >Next</a></h1>
+            </header>
+            <article>
+			<h4 class="chapter-title">Chapter 4</h4>
+			<h3> Virtualization Technology</h3>
+			<h4> Before Virtualization</h4>
+			<p> <img src="images/29.png"> </p>
+			
+				<li>Virtualization is the "creation of a virtual (rather than actual) version of something, such as a server, a desktop, a storage device, an operating system or network resources".</li>
+				<li>It allows sharing a single physical instance of a resource or an application among multiple customers and organizations. It does by assigning a logical name to physical storage and providing a pointer to that physical resource when demanded.</li>
+				<li>Virtualization is a technology that enables the single physical infrastructure to function as multiple logical infrastructure or resources.</li>
+				<li>Virtualization is not only limited to the hardware, it can take many forms such as memory, processor, I/O, network, OS, data, and application.</li>
+
+				<br>To increase the resource utilization and return on Investment (ROI), the companies started using the technology called virtualization where a single physical infrastructure can be used to run multiple operating systems (OSs) and applications
+
+				<br>Before virtualization, the single physical infrastructure was used to run a single OS and its applications, which results in the underutilization of resources.
+
+				<br>The nonshared nature of the hardware forces organizations to buy new hardware to meet their additional computing needs.
+				
+				<br>For example, if an organization wants to experiment or simulate their new idea, they have to use separate dedicated systems for different experiments. So to complete their research work successfully, they tend to buy new hardware that will increase the capital expenditure (CapEx) and operational expenditure (OpEx).
+                 
+				<h4> After Virtualization</h4>
+				<p> <img src="images/30.png"> </p>
+
+
+				<br><b>Industries adopt virtualization in their organization because of the following benefits:</b>
+				<li>Better resource utilization</li>
+				<li>Increases return on investment</li>
+				<li>Dynamic data center</li>
+				<li>Supports green IT</li>
+				<li>Eases administration</li>
+				<li>Improves disaster recovery</li>
+				<br><b>While virtualization offers many benefits, it also has some drawbacks:</b>
+				<li>Single point of failure</li>
+				<li>Demands high-end and powerful infrastructure</li>
+				<li>May lead to lower performance</li>
+				<li>Requires specialized skillset</li>
+
+
+				<br><b>Virtualization is the process of abstracting the physical resources to the pool of virtual resources that can be given to any virtual machine (VMs). The different resources like memory, processors, storage, and networks can be virtualized using proper virtualization technologies.</b>
+
+				<h3>Types of Virtualization:</h3>
+				<br>1. Hardware Virtualization.
+				<br>2. Operating system Virtualization.
+				<br>3. Server Virtualization.
+				<br>4. Storage Virtualization.
+				<br>5. Network Virtualization
+				<br>6. Application Virtualization
+				
+				<h3>1) Hardware Virtualization:</h3>
+				When the virtual machine software or virtual machine manager (VMM) is directly installed on the hardware system is known as hardware virtualization.
+				The main job of the hypervisor is to control and monitoring the processor, memory, and other hardware resources.
+				After the virtualization of the hardware system, we can install the different operating systems on it and run different applications on those OS.
+				<br><b>Usage:</b><br>
+				Hardware virtualization is mainly done for the server platforms because controlling virtual machines is much easier than controlling a physical server.
+				
+				<h3>2) Operating System Virtualization:</h3>
+				When the virtual machine software or virtual machine manager (VMM) is installed on the Host operating system instead of directly on the hardware system is known as operating system virtualization.
+				<br><b>Usage:</b><br>
+				Operating System Virtualization is mainly used for testing the applications on different platforms of OS.
+
+				<h3>3) Server Virtualization:</h3>
+				When the virtual machine software or virtual machine manager (VMM) is directly installed on the Server system is known as server virtualization.
+				<br><b>Usage:</b><br>
+				Server virtualization is done because a single physical server can be divided into multiple servers on a demand basis and for balancing the load.
+				
+				<h3>4) Storage Virtualization:</h3>
+				Storage virtualization is the process of grouping the physical storage from multiple network storage devices so that it looks like a single storage device.
+				Storage virtualization is also implemented by using software applications.
+				Modern hypervisors help in achieving storage virtualization.
+				<br><b>Usage:</b><br>
+				Storage virtualization is mainly done for backup and recovery purposes.
+                
+				<p> <img src="images/31.png"> </p>
+				
+				<h3>5) Network  Virtualization (NV)</h3>
+				Network virtualization is a type of resource virtualization in which the physical network can be abstracted to create a virtual network. Normally, the physical network components like router, switch, and Network Interface Card (NIC) will be controlled by the virtualization software to provide virtual network components. The virtual network is a single software-based entity that contains the network hardware and software resources. Network virtualization can be achieved from an internal network or by combining many external networks. The other advantage of network virtualization is it enables the communication between the VMs that share the physical network. There are different types of network access given to the VMs such as bridged network, network address translation (NAT), and host only. The concept of network virtualization is illustrated in Figure 7.6.
+
+				<br><b>NV can also be achieved by combining various network components from multiple networks.</b>
+ 
+                <p> <img src="images/32.png"> </p>
+
+				<h3>6) Application Virtualization</h3>
+				In application virtualization, the single application installed on the central server is virtualized and the various virtualized components of the application will be given to the users requesting the services. In this case, the application is given its own copy of components such as its own registry files and global objects that are not shared with others. The virtual environment prevents conflicts in resource usage.
+
+                 <p> <img src="images/33.png"> </p>
+
+				<h3>Main Memory Virtualisation</h3>
+				The process of providing a virtual main memory to the VMs is known as memory virtualization or main memory virtualization. In main memory virtualization, the physical main memory is mapped to the virtual main memory as in the virtual memory concepts in most of the OSs. The main idea of main memory virtualization is to map the virtual page numbers to the physical page numbers. All the modern x86 processors are supporting main memory virtualization.
+				Main memory virtualization can also be achieved by using hypervisor software. Normally, in the virtualized data centers, the unused main memory of the different servers will consolidate as a virtual main memory pool and can be given to the VMs. The concept of main memory virtualization is illustrated in Figure 7.4.
+
+                <p> <img src="images/34.png"> </p>
+
+			
+
+            </article>
+            <footer>
+                <ol id="page-numbers">
+                    <li>21</li>
+                    <li>22</li>
+                </ol>
+            </footer>
+        </section>
+
+    </div>
+</div>
+  
+  
+</body>
+</html>

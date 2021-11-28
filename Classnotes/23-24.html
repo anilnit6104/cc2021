@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 4</title>
+  
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <div id="wrapper">
+    <div id="container">
+
+        <section class="open-book">
+            <header>
+                <h1><a href="21-22.html">Previous</a></h1>
+				<h1><a href="25-26.html">Next</a></h1>
+            </header>
+            <article>
+						-----------------------------------------------------------------------------------------
+			<br><img src="images/35.png">
+			<br><img src="images/36.png">
+			
+			<h2>Protection Rings in OSs.</h2>
+			
+			<li>Protection rings are used to isolate the OS from untrusted user applications.</li>
+			<li>The OS can be protected with different privilege levels.</li>
+			<li>In protection ring  architecture, the rings are arranged in hierarchical order from ring 0 to ring 3 as shown in Figure 7.9.</li>
+			<li>Ring 0 contains the programs that are most privileged, and ring 3 contains the programs that are least privileged.</li>
+			<li>Normally, the highly trusted OS instructions will run in ring 0, and it has unrestricted access to physical resources.</li>
+			<li>Ring 3 contains the untrusted user applications, and it has restricted access to physical resources.</li>
+			<li>The other two rings (ring 1 and ring 2) are allotted for device drivers.</li>
+			<li>This protection ring architecture restricts the misuse of resources and malicious behavior of untrusted user-level programs. For example, any user application from ring 3 cannot directly access any physical resources as it is the least privileged level.</li>
+			<li>But the kernel of the OS at ring 0 can directly access the physical resources as it is the most privileged level.</li>
+			
+			<br><img src="images/37.png">
+			
+			<br><h3>Approaches to Virtualization</h3>
+
+<br>There are three types of approaches followed for virtualization:
+<br>1. Full virtualization
+<br>2. Paravirtualization
+<br>3. Hardware-assisted virtualization
+
+<br><h3>Full Virtualization</h3>
+
+<li>In full virtualization, the guest OS is completely abstracted from the underlying infrastructure.</li>
+<li>The virtualization layer or virtual machine manager (VMM) fully decouples the guest OS from the underlying infrastructure.</li>
+<li>The guest OS is not aware that it is virtualized and thinks it is running on the real hardware.</li>
+<li>In this approach, the hypervisor  or VMM resides at ring  0 and provides all the virtual infrastructures needed  for  VMs.</li>
+<li>The guest OS resides at ring 1 and has the least privilege than the hypervisor. Hence, the OS cannot communicate to the physical infrastructure directly.</li>
+<li>It requires the help of hypervisors to communicate with the underlying infrastructure. The user applications reside at ring 3, as shown in Figure 7.10.</li>
+<li>This approach uses binary translation  and direct execution  techniques. Binary translation is used to translate nonvirtualized guest OS instructions with new sequences of instructions that have the same intended effect on the virtual infrastructure.</li>
+<li>On the other hand, direct execution is used for user application requests where the applications can directly access the physical resources without modifying the instructions.</li>
+
+<br><b>Pros</b>
+<br>• This approach provides the best isolation and security for the VMs.
+<br>• Different OSs can run simultaneously.
+<br>• The virtual guest OS can be easily migrated to work in native hardware.
+<br>• It is easy to install and use and does not require any change in the guest OS.
+<br><b>Cons</b>
+<br>• Binary translation is an additional, overhead, and it reduces the overall system performance.
+<br>• There is a need for the correct combination of hardware and software.
+<br><img src="images/38.png">
+
+
+<br>
+<br><h3>Paravirtualization</h3>
+<li>This approach is also known as partial virtualization or OS-assisted virtualization and provides partial simulation of the underlying infrastructure.</li>
+<li>The main difference between the full virtualization and paravirtualization is the guest OS knows that it is running in a virtualized environment in paravirtualization. But in full virtualization, this information is not known to the guest OS.</li>
+<li>Another difference is that the paravirtualization replaces the translation of nonvirtualized OS requests with hypercalls.</li>
+<li>Hypercalls are similar to system calls and are used for the direct communication between OS and hypervisor.</li>
+<li>This direct communication between the guest OS and hypervisor improves performance and efficiency.</li>
+<li>In full virtualization, the guest OS will be used without any modification. But in paravirtualization, the guest OS needs to be modified to replace nonvirtualizable instructions.</li>
+with the hypercalls.
+<li>As shown in Figure 7.11, the modified guest OS resides at ring 0 and the user applications at ring 3. As the guest OS is at privileged position, it can communicate directly to the virtualization layer without any translation by means of hypercalls.</li>
+<li>Like in full virtualization, the user applications are allowed to access the underlying infrastructure directly.</li>
+
+<br><b>Pros</b>
+<br>• It eliminates the additional overhead of binary translation and hence improves the overall system efficiency and performance.
+<br>• It is easier to implement than full virtualization as there is no need for special hardware
+
+<br><b>Cons</b>
+<br>• There is an overhead of guest OS kernel modification.
+<br>• The modified guest OS cannot be migrated to run on physical hardware.
+<br>• VMs suffer from lack of backward compatibility and are difficult to migrate to other hosts.
+
+<br><img src="images/39.png">
+
+<br><h3>Hardware-Assisted Virtualization</h3>
+<li>In this approach, hardware vendors itself, like Intel and AMD, offer the support for virtualization, which eliminates much overhead involved in the binary translation and guest OS modification.</li>
+<li>Popular hardware vendors like Intel and AMD has given the hardware extension to their x86-based processor to support virtualization.</li>
+
+
+<br><b>Pros</b><br>
+• It reduces the additional overhead of binary translation  in full virtualization.<br>
+• It eliminates the guest OS modification in paravirtualization.
+<br><b>Cons</b><br>
+• Only new-generation processors have these capabilities. All x86/x86_64 processors do not support hardware-assisted virtualization features.<br>
+• More number of VM traps result in high CPU overhead, limited ­scalability, and less efficiency in server consolidation.
+
+<br><img src="images/40.png">
+<br><img src="images/41.png">
+			</article>
+            <footer>
+                <ol id="page-numbers">
+                    <li>23</li>
+                    <li>24</li>
+                </ol>
+            </footer>
+        </section>
+
+    </div>
+</div>
+  
+  
+</body>
+</html>

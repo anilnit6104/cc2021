@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 4</title>
+  
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <div id="wrapper">
+    <div id="container">
+
+        <section class="open-book">
+            <header>
+                <h1><a href="23-24.html">Previous</a></h1>
+				<h1><a href="1-2.html">Chapter 1</a></h1>
+            </header>
+            <article>
+						-----------------------------------------------------------------------------------------
+			
+<h2>Hypervisor and Its Role</h2>
+<li>The hypervisor interacts directly with the physical server’s hardware resources, such as the CPU and storage space, and acts as a platform for the virtual server’s OSs.</li>
+<li>It helps to keep each virtual server completely independent and unaware of the other virtual servers running on the physical machine.</li>
+<li>Before hypervisors are introduced, there was a one-to-one relationship between hardware and OSs. This type of computing results in underutilized resources. After the hypervisors are introduced, it became a one-to-many relationship. With the help of hypervisors, many OSs can run and share single hardware.</li>
+<li>Each guest server or virtual machine (VM) can run its OS. That means one virtual server could be running on Linux and the other one could be running on Windows. Examples include VMWare ESX and VirtualBox.</li>
+<br><b>Types of Hypervisor</b>
+<br>1. Type 1 or bare-metal hypervisors
+<br>2. Type 2 or hosted hypervisors
+
+<br><h3>Type 1 hypervisor:</h3> This type of hypervisor runs directly on the host computer’s hardware to control the hardware resources and also to manage the guest OSs. These are also known as native or bare-metal hypervisors. Examples include VMware ESXi, Citrix XenServer, and Microsoft Hyper-V hypervisor.
+
+<br><h3>Type 2 hypervisor:</h3> This type of hypervisor runs within a formal OS environment. In this type, the hypervisor runs as a distinct second layer while the guest OS runs as a third layer above the hardware. These are also known as the hosted hypervisors. Examples include VMware Workstation and VirtualBox.
+
+<br><img src="images/42.png">
+<br><img src="images/43.png">
+
+<h2>Security Issues and Recommendations</h2>
+<li>The hypervisor creates a virtual environment in the data centers. So, the better way to attack the resources is by attacking the hypervisor.</li>
+<li>The hypervisor attack generally compromises the hypervisor through malicious code written by an attacker to disrupt or corrupt the whole server.</li>
+<li>In a virtualized environment, the hypervisor is the higher authority entity that has direct access to the hardware. So, most of the attackers will target the hypervisor as an entry point to attack the system.</li>
+<li>In bare-metal hypervisor (type 1), it is very difficult to perform the attack as it is deployed directly on the hardware.</li>
+<li>But the hosted hypervisors (type 2) are more vulnerable to the attacks as hypervisors are running on top of the host OSs.</li>
+
+<br><b>There are two possibilities of attacking the hypervisor:</b>
+<br>1. Through the host OS
+<br>2. Through the guest OS
+
+
+<br><b>The attacker can do the following malicious activities (Through the host OS):</b>
+<br>• Denial of service attack, where the attacker can deny the virtual resources when there is a request from the new VM
+<br>• Stealing the confidential information that is stored in the VMs
+
+<br><b>After the hypervisor gets compromised, the attacker can do the following malicious activities  (Through the guest OS):</b>
+<br>• Get unauthorized access to the other VMs that share the physical hardware.</b>
+<br>• Attacker can utilize the hardware resources fully to launch resource exhaustion attacks, etc.</b>
+
+<br><img src="images/44.png">
+<br><img src="images/45.png">
+
+<br><b>Recommendations to avoid hypervisor attacks:</b> <br>Most of the attacks on the hypervisor are through the host OS or the guest OS. So, the OS should be protected from
+the malicious attacker or the hypervisors should be protected from the compromised OSs. There are several best practices to keep the hypervisor secured:
+<br>• Update the hypervisor software and the host OS regularly.
+<br>• Disconnect the unused physical resources from the host system or hypervisor.
+<br>• Enable the least privilege to the hypervisor and guest OS to avoid attacks through unauthorized access.
+<br>• Deploy the monitoring tools in the hypervisor to detect/prevent malicious activities.
+<br>• Strong guest isolation.
+<br>• Employ mandatory access control policies.
+
+<br><b>From Virtualization to Cloud Computing</b>
+
+<br>Many users of current IT solutions consider the technologies virtualization and cloud computing as the same. But both technologies are actually different, or in other words, we can say virtualization is not cloud computing. We can prove this claim with the following parameters
+
+<br><b>Type of service</b>
+<br>• Service delivery
+<br>• Service provisioning
+<br>• Service orchestration
+<br>Orchestration is the automated configuration, management, and coordination of computer systems, applications, and services. Orchestration helps IT to more easily manage complex tasks and workflows.
+<br>• Elasticity
+<br>• Target Audience
+
+
+<br><h3>Data Center Virtualisation</h3>
+
+<li>It is the process of transforming data centers hosted on physical servers to virtual data centers using cloud computing technology.</li>
+<li>Previously, organizations had to deploy multiple servers — email, data, and file servers — to keep pace with high storage and processing demands.</li>
+<li>Servers operated at a fraction of their capacity, creating IT environments with huge inefficiencies and excessive operating costs.</li>
+<li>With data center virtualization, organizations can run multiple operating systems and applications on a single server in the cloud, increasing economies of scale and improving efficiency.</li>
+<li>Datacenter virtualization is the process of creating a modern data center that is highly scalable, available, and secure. With data center virtualization products that are software-defined and highly automated, you can increase IT agility and create a seamless foundation to manage private and public cloud services alongside traditional on-premises infrastructure.</li>
+
+<br><br>A virtualized data center is a logical software abstraction of a physical data center that provides a collection of cloud infrastructure components including servers, storage clusters, and other networking components, to business enterprises. Virtual data centers can be customized to provide cloud computing resources including processor power, memory, storage, and bandwidth tailored to a business’s unique needs.
+
+
+
+<br><b>Benefits:</b>
+<br>1. Reduce Operating Costs
+<br>2. Improve Application Performance
+<br>3. Minimize or Eliminate Downtime
+<br>4. Lessen Heat Buildup
+
+<h3>Different types of Hypervisor</h3>
+
+<b>Type 1 hypervisors:</b>
+<br>1. VMware ESX and ESXi
+<li>These hypervisors offer advanced features and scalability but require licensing, so the costs are higher.</li>
+
+<li>There are some lower-cost bundles that VMware offers and they can make hypervisor technology more affordable for small infrastructures.</li>
+
+<li>VMware is the leader in Type-1 hypervisors. Their vSphere/ESXi product is available in a free edition and 5 commercial editions.</li>
+
+<br><b>2. Microsoft Hyper-V</b>
+<li>The Microsoft hypervisor, Hyper-V doesn’t offer many of the advanced features that VMware’s products provide. However,  with XenServer and vSphere, Hyper-V is one of the top 3 Type-1 hypervisors.</li>
+
+<li>It was first released with Windows Server, but now Hyper-V has been greatly enhanced with Windows Server 2012 Hyper-V. Hyper-V is available in both a free edition (with no GUI and no virtualization rights) and 4 commercial editions – Foundations (OEM only), Essentials, Standard, and Datacenter. Hyper-V</li>
+
+<br><b>3. Citrix XenServer</b>
+<li>It began as an open-source project. The core hypervisor technology is free, but like VMware’s free ESXi, it has almost no advanced features. Xen is a type-1 bare-metal hypervisor. Just as Red Hat Enterprise Virtualization uses KVM, Citrix uses Xen in the commercial XenServer.</li>
+
+<li>Today, the Xen open-source projects and community are at Xen.org. Today, XenServer is a commercial type-1 hypervisor solution from Citrix, offered in 4 editions. Confusingly, Citrix has also branded their other proprietary solutions like XenApp and XenDesktop with the Xen name.</li>
+
+<br><b>4. Oracle VM</b>
+<li>The Oracle hypervisor is based on the open-source Xen. However, if you need hypervisor support and product updates, it will cost you. Oracle VM lacks many of the advanced features found in other bare-metal virtualization hypervisors.</li>
+
+<b>Type 2 hypervisors:</b>
+<br><b>1. VMware Workstation/Fusion/Player</b>
+<li>VMware Player is a free virtualization hypervisor.</li>
+
+<li>It is intended to run only one virtual machine (VM) and does not allow creating VMs.VMware Workstation is a more robust hypervisor with some advanced features, such as record-and-replay and VM snapshot support.</li>
+
+<br><b>VMware Workstation has three major use cases:</b>
+
+<br>1. for running multiple different operating systems or versions of one OS on one desktop,</li>
+<br>2. for developers that need sandbox environments and snapshots, or
+<br>3. for labs and demonstration purposes.
+
+<br><br><b>2. VMware Server</b>
+<li>VMware Server is a free, hosted virtualization hypervisor that’s very similar to the VMware Workstation.VMware has halted development on servers since 2009.</li>
+
+<br><b>3. Microsoft Virtual PC</b>
+<li>This is the latest Microsoft version of this hypervisor technology, Windows Virtual PC, and runs only on Windows 7 and supports only Windows operating systems running on it.</li>
+
+<br><b>4. Oracle VM VirtualBox</b>
+<li>VirtualBox hypervisor technology provides reasonable performance and features if you want to virtualize on a budget. Despite being a free, hosted product with a very small footprint, VirtualBox shares many features with VMware vSphere and Microsoft Hyper-V.</li>
+
+<br><b>5. Red Hat Enterprise Virtualization</b>
+<li>Red Hat’s Kernel-based Virtual Machine (KVM) has the qualities of both a hosted and a bare-metal virtualization hypervisor. It can turn the Linux kernel itself into a hypervisor so the VMs have direct access to the physical hardware.</li>
+
+<h2>KVM</h2>
+<li>This is a virtualization infrastructure for the Linux kernel. It supports native virtualization on processors with hardware virtualization extensions..</li>
+
+<li>The open-source KVM (or Kernel-Based Virtual Machine) is a Linux-based type-1 hypervisor that can be added to most Linux operating systems including Ubuntu, Debian, SUSE, and Red Hat Enterprise Linux, but also Solaris, and Windows..</li>
+<h3>Xen Hypervisor</h3>
+
+<li>Xen is a hypervisor that enables the simultaneous creation, execution, and management of multiple virtual machines on one physical computer..</li>
+
+<li>Xen is primarily a bare-metal, type-1 hypervisor that can be directly installed on computer hardware without the need for a host operating system. Because it's a type-1 hypervisor, Xen controls, monitors and manages the hardware, peripheral and I/O resources directly..</li>
+
+<li>Xen was developed by XenSource, which was purchased by Citrix Systems in 2007. Xen was first released in 2003. It is an open-source hypervisor. It also comes in an enterprise version..</li>
+
+<br><b>Study More: </b>https://www.geeksforgeeks.org/virtualization-xen-paravirtualization/
+
+			</article>
+            <footer>
+                <ol id="page-numbers">
+                    <li>25</li>
+                    <li>26</li>
+                </ol>
+            </footer>
+        </section>
+
+    </div>
+</div>
+  
+  
+</body>
+</html>
